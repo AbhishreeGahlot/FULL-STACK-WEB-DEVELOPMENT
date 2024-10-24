@@ -1,0 +1,33 @@
+
+### Day 1 - Introduction to MERN Stack Course
+
+1. **Course Overview**:
+   - Full Stack Web Development from basics to advanced using the **MERN stack** (MongoDB, Express.js, React, Node.js).
+   - Topics include **HTML, CSS, JavaScript, React, and MongoDB**.
+   - Focus on understanding core concepts, building projects, and applying knowledge.
+
+2. **Web Development Basics**:
+   - **Static Websites**: Display fixed content without user interaction.
+   - **Dynamic Websites**: Content changes based on user interaction and inputs.
+   - Importance of knowing **both front-end (UI)** and **back-end (server logic & data)** for full stack development.
+
+3. **Key Components**:
+   - **Frontend**: Use **React** to build user interfaces.
+   - **Backend**: Use **Node.js & Express** for server-side logic.
+   - **Database**: Use **MongoDB** to store and manage data.
+
+4. **Practice and Resources**:
+   - Apply concepts through **projects**.
+   - Explore **free resources, online communities**, and tutorials.
+   - Take **notes** and follow a structured learning path.
+
+5. **Project Insights**:
+   - Build web apps with user interaction and dynamic content handling.
+   - Understand **data flow, APIs**, and interaction between frontend and backend.
+   - Follow **logical sequencing** in coding and adhere to best practices.
+
+6. **Learning Tips**:
+   - Grasp **data access from servers** and basics of web page loading.
+   - Learn **tools** like React, Express, and MongoDB.
+   - Utilize **free courses** and **tutorials** for additional learning.
+
