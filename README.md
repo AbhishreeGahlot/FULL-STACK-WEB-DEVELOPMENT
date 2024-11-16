@@ -1,6 +1,5 @@
 # FULL STACK WEB DEVELOPMENT.
 <br>1. Frontend Development:
-
 <br>HTML5
 <br>CSS
 <br>JavaScript
