@@ -1,4 +1,4 @@
-# FULL STACK WEB DEVELOPMENT.
+# FULL STACK WEB DEVELOPMENT [MERN STACK]
 <br>1. Frontend Development:
 <br>HTML5
 <br>CSS
