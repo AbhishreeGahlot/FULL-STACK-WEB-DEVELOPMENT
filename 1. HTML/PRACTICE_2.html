@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPLEX FORM</title>
+</head>
+<body>
+    <!-- USE OF LEGEND AND FIELDSET  -->
+    <h2>COMPLEX FORM</h2>
+    <form action="/action">
+        <fieldset>
+            <legend>
+                Personal Information
+            </legend>
+            <label for="name">Name:</label>
+        
+            <input type="text" id="name" name="nm" required />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="em" required />
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="ph" required />
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob"/>
+            <label for="gender">Gender</label>
+            <input type="radio" name="male" id="male" value="male"/>
+            <label for="male">Male</label>
+            <input type="radio" name="female" id="female" value="female"/>
+            <label for="female">Female</label>
+            <input type="radio" name="other" id="other" value="other"/>
+            <label for="other">Gender</label>
+            <br>
+            <label for="occupation">Occupation:</label>
+            <select name="country" id="country" required>
+                <option value="india">India</option>
+                <option value="us">United States</option>
+            </select>
+            <br>
+
+
+        </fieldset>
+    </form>
+</body>
+</html>
