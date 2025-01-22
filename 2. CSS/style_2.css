@@ -1,0 +1,123 @@
+/* !important */
+h3{
+    color:hotpink !important;
+}
+
+
+/* element selector */
+h1,h3{
+    color:#b92b27;
+}
+
+#login
+{
+    background-color: white;
+}
+
+/* id selector */
+#signup
+{
+    background-color: #b92b27;
+    color:white;
+}
+
+/*/* class selector */
+
+.upvote
+{
+    background-color: green;
+    color:aliceblue;
+}
+
+.post a 
+{
+    color:purple;
+    background-color: yellow;
+}
+
+/* descendant selector */
+nav ul li a
+{
+    color:hotpink;
+}
+
+/* adjacent sibling combinator */
+p + h3{
+    text-decoration: underline;
+}
+
+/* adjacent sibling combinator */
+.upvote + button{
+    background-color: cornflowerblue;
+    color:darkblue;
+}
+
+/* child combinator */
+div >input{
+    background-color:darksalmon;  
+}
+
+/* attribute selector  */
+input[type="text"]
+{
+color:red;
+}
+
+/* attribute selector  */
+input[type="password"]
+{
+color:green;
+}
+
+/* practice question */
+div[id="myId"] p
+{
+    color:green;
+}
+
+/* pseudo class */
+button:hover
+{
+    background-color:black;
+    color:white;
+}
+
+/* hover  */
+h3:hover
+{
+    text-decoration: overline;
+}
+
+/* active(after click) */
+button:active
+{
+    background-color: hotpink;
+}
+
+/* checked */
+input[type="radio"]:checked + label{
+    color:red;
+    font-weight: bold;
+}
+
+/* nth of type */
+div:nth-of-type(2n)
+{
+    background-color:blanchedalmond ;
+}
+
+/* psuedo element -> first-letter */
+h1::first-letter
+{
+    color:green;
+}
+
+/* pseudo element-> first-line */
+p::first-line{
+    color:blue;
+}
+
+/* pseudo element->selection */
+p::selection{
+    background-color:yellow;
+}
