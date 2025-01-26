@@ -1,0 +1,41 @@
+/* Container for alignment */
+.container {
+    display: flex;
+    justify-content: center; /* Align the cards horizontally */
+    margin-top: 50px; /* Add spacing at the top */
+}
+
+/* Card styling */
+.card {
+    height: 300px; /* Ensure all cards have equal height */
+    width: 200px; /* Fixed width for consistent alignment */
+    border: 2px solid black;
+    display: flex;
+    margin:10px;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: space-between; /* Distribute content evenly */
+    text-align: center; /* Center-align the text */
+    padding: 10px; /* Add padding inside the card */
+    box-sizing: border-box; /* Include padding and border in height/width */
+    transition:1s;
+    color:white;
+}
+
+.card:hover
+{
+    box-shadow: 8px 8px 10px yellowgreen;
+
+}
+
+/* Image styling */
+img {
+    width: 100%; /* Make the image fill the card width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+body{
+    background-color: black;
+}
+
+
