@@ -1,0 +1,104 @@
+.container
+{
+    width: 600px;
+    height: 300px;
+    background-color:rgb(118, 212, 253);
+    display: grid;
+    /* grid-template-columns: 100px 100px 100px ;
+    grid-template-rows: 50px 50px 50px; */
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows:repeat(3,1fr);   
+    row-gap:10px;
+    column-gap:10px;
+    justify-items: end;
+
+}
+
+.item
+{
+    width: 100px;
+    height: 50px;
+    background-color: greenyellow;
+    border:2px solid black;
+    text-align:center;
+}
+
+.one
+{
+    width: 100px;
+    height: 50px;
+    background-color: greenyellow;
+    border:2px solid black;
+    text-align:center;
+    grid-column:1/4;  
+}
+
+#ani
+{
+    background-color: lightpink;
+    height:150px;
+    width:150px; 
+
+    animation-name:widthAnimation;
+    animation-duration:2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes fontAnimation
+{
+    from{font-size:30px;}
+    to{font-size:70px;}
+}
+
+@keyframes widthAnimation
+{
+    from{width:30px;}
+    to{width:800px;}
+}
+
+#media
+{
+    height: 300px;
+    width:600px;
+    background-color: red;
+}
+
+/* media queries */
+@media (min-width:400px)
+{
+    #media{
+        background-color: black;
+    }
+}
+
+/* orientation - media queries */
+@media(orientation:landscape)
+{
+    #media
+    {
+        background-color: aqua;
+    }
+}
+
+/* z index */
+#z1
+{
+    height: 150px;
+    width:150px;
+    background-color: red;
+    position: relative;  /* Uncomment this line */
+
+    z-index: 2;
+}
+
+#z2 {
+    height: 150px;
+    width: 150px;
+    background-color: rgb(14, 73, 5);
+    position: relative;  /* Uncomment this line */
+    bottom:50px;
+z-index: -1;
+}
