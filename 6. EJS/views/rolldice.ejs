@@ -1,0 +1,17 @@
+<!-- views/rolldice.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roll Dice</title>
+</head>
+<body>
+    <h1>Dice rolled!</h1>
+    <!-- 7 conditional statement -->
+    <h2>You got: <%= num %></h2>
+    <% if(num == 6 ) { %> <!-- ejs logic in scriplet tag else html is normally written  -->
+        <h2> Nice ! roll again .</h2>
+    <%  } %>
+</body>
+</html>
+
