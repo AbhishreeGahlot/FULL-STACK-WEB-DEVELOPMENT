@@ -1,0 +1,309 @@
+// to turn on mongosh : use mongodb in cmd
+
+C:\Windows\System32>mongosh
+
+Current Mongosh Log ID: 683ad51570db5a55236c4bcf
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.1
+Using MongoDB:          8.0.9
+Using Mongosh:          2.5.1
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2025-05-30T20:12:56.833+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+
+
+test> 1+2
+3
+
+// to use/ create a db 
+test> use college
+switched to db college
+
+// return name of db 
+college> db
+college
+
+// insert one document in db
+college> db.student.insertOne( {name: "adam" , age :19 , marks : 88 })
+{
+  acknowledged: true,
+  insertedId: ObjectId('683ae8b570db5a55236c4bd0')
+}
+
+// return all content of db 
+college> db.student.find()
+[
+  {
+    _id: ObjectId('683ae8b570db5a55236c4bd0'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  }
+]
+
+// insert 
+college> db.student.insertOne( {name: "bob" , age :29 , marks : 90 })
+{
+  acknowledged: true,
+  insertedId: ObjectId('683ae90270db5a55236c4bd1')
+}
+
+
+college> db.student.find()
+[
+  {
+    _id: ObjectId('683ae8b570db5a55236c4bd0'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  },
+  {
+    _id: ObjectId('683ae90270db5a55236c4bd1'),
+    name: 'bob',
+    age: 29,
+    marks: 90
+  }
+]
+
+// insert many document in the collection 
+college> db.student.insertMany([ {name: "charlie" , age :19 , marks :80 } , {name : "donald" , city : "Delhi"} ] )
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('683ae9e270db5a55236c4bd2'),
+    '1': ObjectId('683ae9e270db5a55236c4bd3')
+  }
+}
+
+
+college> db.student.find()
+[
+  {
+    _id: ObjectId('683ae8b570db5a55236c4bd0'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  },
+  {
+    _id: ObjectId('683ae90270db5a55236c4bd1'),
+    name: 'bob',
+    age: 29,
+    marks: 90
+  },
+  {
+    _id: ObjectId('683ae9e270db5a55236c4bd2'),
+    name: 'charlie',
+    age: 19,
+    marks: 80
+  },
+  {
+    _id: ObjectId('683ae9e270db5a55236c4bd3'),
+    name: 'donald',
+    city: 'Delhi'
+  }
+]
+
+// to find the document: find returns the cursor
+college> db.student.find({city:"Delhi"})
+[
+  {
+    _id: ObjectId('683ae9e270db5a55236c4bd3'),
+    name: 'donald',
+    city: 'Delhi'
+  }
+]
+
+
+
+college> db.student.find({city:"Delhi" , name : "donald"})
+[
+  {
+    _id: ObjectId('683ae9e270db5a55236c4bd3'),
+    name: 'donald',
+    city: 'Delhi'
+  }
+]
+
+
+college> db.student.insertOne( {name: "eve" , age :19 , marks : 90 , city:"Delhi"})
+{
+  acknowledged: true,
+  insertedId: ObjectId('683aec7670db5a55236c4bd4')
+}
+
+
+college> db.student.find({marks:{$gt : 75}})
+[
+  {
+    _id: ObjectId('683ae8b570db5a55236c4bd0'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  },
+  {
+    _id: ObjectId('683ae90270db5a55236c4bd1'),
+    name: 'bob',
+    age: 29,
+    marks: 90
+  },
+  {
+    _id: ObjectId('683ae9e270db5a55236c4bd2'),
+    name: 'charlie',
+    age: 19,
+    marks: 80
+  },
+  {
+    _id: ObjectId('683aec7670db5a55236c4bd4'),
+    name: 'eve',
+    age: 19,
+    marks: 90,
+    city: 'Delhi'
+  }
+]
+
+
+college> db.student.find({marks:{$gte : 75}})
+[
+  {
+    _id: ObjectId('683ae8b570db5a55236c4bd0'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  },
+  {
+    _id: ObjectId('683ae90270db5a55236c4bd1'),
+    name: 'bob',
+    age: 29,
+    marks: 90
+  },
+  {
+    _id: ObjectId('683ae9e270db5a55236c4bd2'),
+    name: 'charlie',
+    age: 19,
+    marks: 80
+  },
+  {
+    _id: ObjectId('683aec7670db5a55236c4bd4'),
+    name: 'eve',
+    age: 19,
+    marks: 90,
+    city: 'Delhi'
+  }
+]
+
+
+
+college> db.student.find({city:{$in : ["Delhi"]}})
+[
+  {
+    _id: ObjectId('683ae9e270db5a55236c4bd3'),
+    name: 'donald',
+    city: 'Delhi'
+  },
+  {
+    _id: ObjectId('683aec7670db5a55236c4bd4'),
+    name: 'eve',
+    age: 19,
+    marks: 90,
+    city: 'Delhi'
+  }
+]
+
+
+
+
+college> db.student.find( {$or: [ {marks: {$gt : 85 }} , {city: "Delhi"} ] } )
+[
+  {
+    _id: ObjectId('683ae8b570db5a55236c4bd0'),
+    name: 'adam',
+    age: 19,
+    marks: 88
+  },
+  {
+    _id: ObjectId('683ae90270db5a55236c4bd1'),
+    name: 'bob',
+    age: 29,
+    marks: 90
+  },
+  {
+    _id: ObjectId('683ae9e270db5a55236c4bd3'),
+    name: 'donald',
+    city: 'Delhi'
+  },
+  {
+    _id: ObjectId('683aec7670db5a55236c4bd4'),
+    name: 'eve',
+    age: 19,
+    marks: 90,
+    city: 'Delhi'
+  }
+]
+
+
+college> db.student.updateOne( {name:"adam"} , {$set: {marks:99}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+college> db.student.updateMany( {city:"Delhi" }  , { $set : { city:"New Delhi"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+
+college> db.student.replaceOne( { name:"bob" } ,  { name:"shradha"} )
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+
+//nesting 
+college> db.student.insertOne( { name : "abc"  , performance : { marks : 88 , grade : 'A' } } )
+{
+  acknowledged: true,
+  insertedId: ObjectId('683afc7670db5a55236c4bd5')
+}
+ // find in nesting through " "  , and . 
+college> db.student.find({"performance.marks" : 88} )
+[
+  {
+    _id: ObjectId('683afc7670db5a55236c4bd5'),
+    name: 'abc',
+    performance: { marks: 88, grade: 'A' }
+  }
+]
+
+
+// delete one : first that matches 
+college> db.student.deleteOne({city:"New Delhi"})
+{ acknowledged: true, deletedCount: 1 }
+
+//delete many 
+college> db.student.deleteMany({city:"New Delhi"})
+{ acknowledged: true, deletedCount: 1 }
+
+
+// dropping/deletingdatabse
+college> db.dropDatabase()
+{ ok: 1, dropped: 'college' }
+
+
+// emptying the database content
+college> db.student.deleteMany({})
+
