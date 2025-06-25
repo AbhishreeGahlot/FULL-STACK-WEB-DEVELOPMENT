@@ -1,0 +1,26 @@
+#root {
+  margin: 0 auto;
+}
+
+.Product{
+    border: 1px solid black;
+    border-radius: 14px;
+    /* padding: 0 10px 0 10px; */
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 20px;
+    text-align: center;
+    width:200px;
+    height:160px
+}
+
+.productTab
+{
+  display: flex;
+  flex-wrap: "wrap";
+  justify-content: center;
+  align-items: center;
+}
+
+
+
