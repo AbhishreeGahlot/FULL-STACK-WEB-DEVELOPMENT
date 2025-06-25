@@ -7,5 +7,5 @@
 <br>2. Backend Development:
 <br>ExpressJs , NodeJs
 <br>3. Database:
-<br>SQL (e.g., MySQL) or NoSQL (e.g., MongoDB)
+<br>SQL (MySQL) or NoSQL (MongoDB)
 
